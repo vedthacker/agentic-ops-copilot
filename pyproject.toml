@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opscopilot"
+version = "0.1.0"
+description = "Hierarchical multi-agent support-operations copilot (LangGraph, ReAct, self-reflection, human approval)"
+requires-python = ">=3.10"
+dependencies = ["langgraph>=0.2", "langgraph-checkpoint-sqlite>=2.0", "google-genai>=1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
