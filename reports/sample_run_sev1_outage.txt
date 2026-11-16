@@ -1,0 +1,46 @@
+
+======================================================================
+thread=demo  status=completed
+======================================================================
+## Summary
+Customer Cedar Foods says the tracking dashboard is down in EMEA. What is our procedure and who needs to be involved.
+Found 1 relevant ticket(s): T-27 (SEV1, open, outage).
+
+## Severity and SLA
+Business plan: first response for critical issues within 1 hour, uptime commitment 99.9%.
+
+## Next steps
+1. The operations lead confirms the regional failure, the incident commander approves failover, and traffic is drained from the failed region.
+2. Customers are notified within 10 minutes of the failover decision.
+3. SEV1 is a complete outage or confirmed data breach and must be acknowledged within 5 minutes; an incident commander is assigned immediately.
+4. A burst of 502 or 503 responses on the tracking endpoints should be treated as a possible outage.
+
+## Likely root cause
+Most likely a regional service failure; to be confirmed with the on-call engineer.
+
+## Customer message
+Hello, thanks for reaching out. We are looking into this now and will update you with the next steps shortly. We will not guess at a fix time until engineering confirms it.
+
+## Sources
+api_integration_runbook, incident_runbook, tickets_db
+
+proposed escalation: {"ticket_id": 27, "team": "Platform on-call", "summary": "SEV1 outage ticket needs attention: Customer Cedar Foods says the tracking dashboard is down in EMEA. What is our procedure and who needs to be involved?"}
+note: escalation created: ticket 27 -> Platform on-call
+
+--- run metrics: 12 LLM calls, 5 tool calls, 1 revision(s), 4329+1262 tokens (approx), est $0.004454, wall 11.0 ms
+    supervisor  llm=2 tools=0 tokens=414
+    analyst     llm=4 tools=3 tokens=1452
+    researcher  llm=2 tools=1 tokens=1162
+    drafter     llm=2 tools=0 tokens=1877
+    critic      llm=2 tools=0 tokens=686
+    human_gate  llm=0 tools=1 tokens=0
+step= 8 next=[] draft_v=2 findings=['analyst', 'researcher'] status=completed
+step= 7 next=['human_gate'] draft_v=2 findings=['analyst', 'researcher'] status=running
+step= 6 next=['critic'] draft_v=2 findings=['analyst', 'researcher'] status=running
+step= 5 next=['drafter'] draft_v=1 findings=['analyst', 'researcher'] status=running
+step= 4 next=['critic'] draft_v=1 findings=['analyst', 'researcher'] status=running
+step= 3 next=['drafter'] draft_v=0 findings=['analyst', 'researcher'] status=running
+step= 2 next=['supervisor'] draft_v=0 findings=['analyst', 'researcher'] status=running
+step= 1 next=['researcher', 'analyst'] draft_v=0 findings=[] status=running
+step= 0 next=['supervisor'] draft_v=0 findings=[] status=running
+step=-1 next=['__start__'] draft_v=0 findings=[] status=None

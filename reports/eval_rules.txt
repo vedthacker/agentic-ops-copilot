@@ -1,0 +1,10 @@
+llm backend: rules
+
+api_429_basic_customer               6/6 checks  llm=12 tools=4 rev=1 tokens=5156 status=completed
+sev1_outage_approved                 5/5 checks  llm=12 tools=5 rev=1 tokens=5591 status=completed
+sev1_outage_rejected                 2/2 checks  llm=12 tools=4 rev=1 tokens=5591 status=rejected
+open_ticket_stats                    1/1 checks  llm=10 tools=2 rev=1 tokens=4009 status=completed
+policy_only_skips_analyst            2/2 checks  llm= 8 tools=1 rev=1 tokens=2936 status=completed
+unknown_customer_no_hallucination    3/3 checks  llm=10 tools=2 rev=1 tokens=4153 status=completed
+
+TOTAL 19/19 checks passed
