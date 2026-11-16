@@ -136,6 +136,10 @@ tests/         27 tests         data/runbooks/   4 fictional runbooks
 - The critic's LLM review and the code rubric overlap; with a strong model I would keep only the checks code can verify and let the LLM judge qualitative issues.
 - No auth or multi-tenant isolation; checkpoints live in a local SQLite file (for production I would use a Postgres/Cloud SQL checkpointer).
 
+## How this was built
+
+I built this with an AI coding assistant (Claude Code), working from a scope I set around the Google Cloud AI consulting role: what to build, which patterns to cover, and what to measure. The assistant wrote most of the first version in a single working session in November 2026, including the tests and benchmarks; it was not developed gradually over months. The numbers in this README come from runs of the code in this repo. The "Limitations / next steps" section is work that has not been done yet.
+
 ## License
 
 MIT
